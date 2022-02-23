@@ -8,7 +8,6 @@ const about = () => {
                   </Head>
                   <h1>About Us</h1>
                   <br />
-                  <br />
                   <h1>Worlds Largest Automotive Marketplace</h1>
                   <br />
                   <br />
