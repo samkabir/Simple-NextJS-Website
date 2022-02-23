@@ -9,7 +9,7 @@ const about = () => {
                   <h1>About Us</h1>
                   <br />
                   <br />
-                  <h1>World's Largest Automotive Marketplace</h1>
+                  <h1>Worlds Largest Automotive Marketplace</h1>
                   <br />
                   <br />
                   <p>Bhalogari.com is the leading and most reliable online auto marketplace launched on September 15, 2017. Headquarter is in Dhaka(Bangladesh), its mission is to bring ease and delight in car buying and selling process Bhalogari offers a bouquet of reliable tools and services to help car consumers decide on buying the right car, at the right price and from the right partner.
