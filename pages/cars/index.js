@@ -1,18 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-// export const getStaticProps = async () => {
-//       const res = await fetch(`https://backend.bhalogari.com/api/cars/choose-by-maker/?maker_name=${carMaker}`);
-//       const data = await res.json();
-
-//       return {
-//             props: {allcars : data}
-//       }
-// }
-
-// let carMaker = 'honda';
-
-
 const cars = () => {
       const { register, handleSubmit } = useForm();
       const [allcars, setAllcars] = useState();
@@ -24,7 +12,6 @@ const cars = () => {
             console.log(data.carmakername);
             carMaker = data.carmakername;   
       }
-
       useEffect(() => {
             fetch(`https://backend.bhalogari.com/api/cars/choose-by-maker/?maker_name=${carMaker}`)
             .then(res => res.json())
@@ -34,9 +21,7 @@ const cars = () => {
                   setIsData(true);
             })
       }, [allcars])
-
       console.log(allcars);
-
       return (
             <div>
                   <h1>All the Cars</h1>
@@ -60,7 +45,5 @@ const cars = () => {
             </div>
       );
 };
-
-
 
 export default cars;
