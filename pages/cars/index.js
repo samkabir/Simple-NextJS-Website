@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-const cars = () => {
+const Cars = () => {
       const { register, handleSubmit } = useForm();
-      const [allcars, setAllcars] = useState();
-      const [isData, setIsData] = useState(false);
+      const [ allcars, setAllcars ] = useState();
+      const [ isData, setIsData ] = useState(false);
 
       let carMaker = '';
 
@@ -46,4 +46,4 @@ const cars = () => {
       );
 };
 
-export default cars;
+export default Cars;
