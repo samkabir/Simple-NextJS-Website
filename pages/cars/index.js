@@ -1,25 +1,41 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-export const getStaticProps = async () => {
-      const res = await fetch(`https://backend.bhalogari.com/api/cars/choose-by-maker/?maker_name=${carMaker}`);
-      const data = await res.json();
+// export const getStaticProps = async () => {
+//       const res = await fetch(`https://backend.bhalogari.com/api/cars/choose-by-maker/?maker_name=${carMaker}`);
+//       const data = await res.json();
 
-      return {
-            props: {allcars : data}
-      }
-}
+//       return {
+//             props: {allcars : data}
+//       }
+// }
 
-let carMaker = 'honda';
+// let carMaker = 'honda';
 
 
-const cars = ({ allcars }) => {
+const cars = () => {
       const { register, handleSubmit } = useForm();
+      const [allcars, setAllcars] = useState();
+      const [isData, setIsData] = useState(false);
+
+      let carMaker = '';
 
       const handleInfo = (data) => {
             console.log(data.carmakername);
-            carMaker = data.carmakername;
+            carMaker = data.carmakername;   
       }
+
+      useEffect(() => {
+            fetch(`https://backend.bhalogari.com/api/cars/choose-by-maker/?maker_name=${carMaker}`)
+            .then(res => res.json())
+            .then(data => {
+                  console.log(data);
+                  setAllcars(data);
+                  setIsData(true);
+            })
+      }, [allcars])
+
+      console.log(allcars);
 
       return (
             <div>
@@ -34,11 +50,13 @@ const cars = ({ allcars }) => {
                               </select>
                         </form>
                   </div>
-                        {allcars.results.map( car => (
+                  <div>
+                        {isData? allcars.results.map( car => (
                               <div key={car.car_id}>
                                     <h2>{car.car_manufacturer.maker_name}</h2>
                               </div>
-                        ))}
+                        )) : "No value"}
+                  </div>
             </div>
       );
 };
