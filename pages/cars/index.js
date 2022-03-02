@@ -10,17 +10,15 @@ const Cars = () => {
 
       const handleInfo = (data) => {
             console.log(data.carmakername);
-            carMaker = data.carmakername;   
-      }
-      useEffect(() => {
+            carMaker = data.carmakername;
             fetch(`https://backend.bhalogari.com/api/cars/choose-by-maker/?maker_name=${carMaker}`)
             .then(res => res.json())
             .then(data => {
                   console.log(data);
                   setAllcars(data);
                   setIsData(true);
-            })
-      }, [allcars])
+            }) 
+      }
       console.log(allcars);
       return (
             <div>
