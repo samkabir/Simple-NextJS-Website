@@ -37,15 +37,13 @@ const Cars = () => {
                   <br />
                   <div className={styles.allcards}>
                         {isData? allcars.results.map( car => (
-                              <div>
-                                    <div key={car.car_id} className={styles.card}>
-                                          <img src={car.images.image_url} width="300px" height="200px" className={styles.image} />
-                                          <h2>{car.car_manufacturer.maker_name}</h2>
-                                          <h3>Car Model: {car.model_name.model_name}</h3>
-                                          <h6>Price: {car.affiliated_price}</h6>
-                                          <h6>Car Year: {car.car_year}</h6>
-                                          <h6>Merchant Company: {car.author}</h6>
-                                    </div>
+                              <div key={car.car_id} className={styles.card}>
+                                    <img src={car.images.image_url} width="300px" height="200px" className={styles.image} />
+                                    <h2>{car.car_manufacturer.maker_name}</h2>
+                                    <h3>Car Model: {car.model_name.model_name}</h3>
+                                    <h6>Price: {car.affiliated_price}</h6>
+                                    <h6>Car Year: {car.car_year}</h6>
+                                    <h6>Merchant Company: {car.author}</h6>
                               </div>
                         )) : "No Car Selected Yet"}
                   </div>
