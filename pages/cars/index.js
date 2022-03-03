@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from '../../styles/Cars.module.css';
+import { useRouter } from 'next/router'
+
 
 const Cars = () => {
       const { register, handleSubmit } = useForm();
       const [ allcars, setAllcars ] = useState();
       const [ isData, setIsData ] = useState(false);
+      const router = useRouter();
 
       let carMaker = '';
 
@@ -20,6 +23,7 @@ const Cars = () => {
                   setIsData(true);
             }) 
       }
+
       console.log(allcars);
       return (
             <div>
@@ -44,6 +48,16 @@ const Cars = () => {
                                     <h6>Price: {car.affiliated_price}</h6>
                                     <h6>Car Year: {car.car_year}</h6>
                                     <h6>Merchant Company: {car.author}</h6>
+                                    <button
+                                          type="button"
+                                          onClick={() => {
+                                          router.push({
+                                          pathname: '/cars/[id]',
+                                          query: { id: car.car_id },
+                                          })
+                                          }}
+                                    >More Details
+                                    </button>
                               </div>
                         )) : "No Car Selected Yet"}
                   </div>
