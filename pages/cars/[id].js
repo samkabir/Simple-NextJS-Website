@@ -11,7 +11,7 @@ export default function Details () {
       console.log(id);
 
       useEffect( () => {
-            fetch(`https://backend.bhalogari.com/api/cars/details/${id}`)
+            fetch(`https://backend.bhalogari.com/api/cars/details/${id}/?format=json`)
             .then(res => res.json())
             .then(data => {
                   setSingleCar(data);
