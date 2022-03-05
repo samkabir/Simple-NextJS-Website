@@ -14,6 +14,9 @@ const Nav = () => {
                         <li>
                               <Link href='/cars'>Cars</Link>    
                         </li>
+                        <li>
+                              <Link href='/uploadCars'>Upload Car</Link>    
+                        </li>
                   </ul>
             </nav>
       );
