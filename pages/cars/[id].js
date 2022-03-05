@@ -17,7 +17,7 @@ export default function Details () {
                   setSingleCar(data);
                   console.log(data);
             }) ; 
-      }, []);
+      }, [id]);
 
       
       
@@ -53,7 +53,9 @@ export default function Details () {
                         </div>
                         <div className={styles.section}>
                               {singleCar.result.car_feature_list.map(feature => (
-                                    <p>{feature.feature_name}</p>
+                                    <div key={singleCar.result.created_at}>
+                                          <p>{feature.feature_name}</p>
+                                    </div>
                               ))}
                         </div>
                   </div>
