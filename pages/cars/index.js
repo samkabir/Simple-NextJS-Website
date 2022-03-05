@@ -21,7 +21,7 @@ const Cars = () => {
                   console.log(data);
                   setAllcars(data);
                   setIsData(true);
-            }) 
+            });
       }
 
       console.log(allcars);

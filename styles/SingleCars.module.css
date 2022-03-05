@@ -1,0 +1,13 @@
+.gridContainer {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+
+.section {
+      margin: 10px;
+}
+
+.imageDiv {
+      padding-top: 30px;
+      margin-right: 10px;
+}
