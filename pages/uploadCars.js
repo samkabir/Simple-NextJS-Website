@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import styles from '../styles/UploadCars.module.css';
 
-const uploadCars = () => {
+const UploadCars = () => {
       const {  register, handleSubmit, reset, formState: { errors } } = useForm();
 
       const handleCarSubmit = data => {
@@ -91,4 +91,4 @@ const uploadCars = () => {
       );
 };
 
-export default uploadCars;
+export default UploadCars;
