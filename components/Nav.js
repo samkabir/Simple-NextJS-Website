@@ -15,7 +15,10 @@ const Nav = () => {
                               <Link href='/cars'>Cars</Link>    
                         </li>
                         <li>
-                              <Link href='/uploadCars'>Upload Car</Link>    
+                              <Link href='/uploadCars'>UploadCar</Link>    
+                        </li>
+                        <li>
+                              <Link href='/recognizeCar'> Car</Link>    
                         </li>
                   </ul>
             </nav>
