@@ -11,3 +11,7 @@ export default function Home() {
     </div>
   )
 }
+
+
+// mongodb user : bhalogari
+// password: OX7rKBVX1TcXi7f0

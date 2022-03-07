@@ -4,9 +4,20 @@ import styles from '../styles/UploadCars.module.css';
 const UploadCars = () => {
       const {  register, handleSubmit, reset, formState: { errors } } = useForm();
 
-      const handleCarSubmit = data => {
-          console.log(data);
-      //     fetch('https://peaceful-depths-32449.herokuapp.com/products', {
+      const handleCarSubmit = cardata => {
+      //     console.log(cardata);
+          
+          fetch('/api/cars/create', {
+            method: "POST",
+            headers : {
+                  "Content-Type": "application/json",
+            },
+            body: JSON.stringify(cardata),
+          })
+          .then(res => res.json())
+          .then(res => console.log(res));
+
+      //     fetch('', {
       //         method: 'POST',
       //         headers: {
       //             'content-type': 'application/json'
