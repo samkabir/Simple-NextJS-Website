@@ -15,7 +15,12 @@ const UploadCars = () => {
             body: JSON.stringify(cardata),
           })
           .then(res => res.json())
-          .then(res => console.log(res));
+          .then(res => {
+                  if(res.insertedId){
+                        alert('added successfully');
+                        reset();
+              }
+          });
 
       //     fetch('', {
       //         method: 'POST',

@@ -13,6 +13,8 @@ if (!MONGODB_DB) {
     throw new Error('Define the MONGODB_DB environmental variable');
 }
 
+let cachedClient = null;
+let cachedDb = null;
 
 export async function connectToDatabase() {
     // set the connection options
